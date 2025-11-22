@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #ff4d79, #6a5acd);
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      transition: 0.4s ease;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: #333;
+      font-weight: 600;
+    }
+
+    #yes {
+      background: #7fff7f;
+      box-shadow: 0 0 15px rgba(0,255,100,0.5);
+    }
+
+    #no {
+      background: #ff6961;
+      position: absolute;
+      box-shadow: 0 0 15px rgba(255,80,80,0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="question">Do you love me?</h1>
+
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const question = document.getElementById("question");
+
+    yesBtn.addEventListener("click", () => {
+      question.innerText = "I love you too! ❤️😁";
+    });
+
+    noBtn.addEventListener("mousemove", () => {
+      const x = Math.random() * window.innerWidth * 0.8;
+      const y = Math.random() * window.innerHeight * 0.8;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
